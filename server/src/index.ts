@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import 'dotenv/config';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
@@ -15,6 +16,7 @@ import { AppDataSource } from './data-source';
         schema: await buildSchema({
             resolvers: [UserResolvers],
         }),
+        context: ({ req, res }) => ({ req, res }),
     });
 
     await apolloServer.start();
