@@ -8,6 +8,7 @@ import {
 import { Home } from './pages/Home';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
+import { Bye } from './pages/Bye';
 
 export const Routes: React.FC = () => {
     return (
@@ -22,11 +23,15 @@ export const Routes: React.FC = () => {
                 <div className="">
                     <Link to="/login"> login</Link>
                 </div>
+                <div className="">
+                    <Link to="/bye"> bye</Link>
+                </div>
             </header>
             <_Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/bye" element={<Bye />} />
             </_Routes>
         </Router>
     );
