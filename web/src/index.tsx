@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Routes } from './Routes';
 import {
     ApolloProvider,
     ApolloClient,
@@ -9,6 +8,7 @@ import {
 } from '@apollo/client';
 import { getAccessToken } from './accessToken';
 import { setContext } from '@apollo/client/link/context';
+import App from './App';
 
 const link = createHttpLink({
     uri: 'http://localhost:4000/graphql',
@@ -38,7 +38,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <ApolloProvider client={client}>
-        <Routes />
+        <App />
     </ApolloProvider>
 );
 

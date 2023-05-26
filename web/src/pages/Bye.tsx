@@ -2,7 +2,9 @@ import React from 'react';
 import { useByeQuery } from 'src/gql/graphql';
 
 export const Bye = () => {
-    const { data, error, loading } = useByeQuery();
+    const { data, error, loading } = useByeQuery({
+        fetchPolicy: 'network-only',
+    });
 
     if (loading) {
         return <div>Loading...</div>;
